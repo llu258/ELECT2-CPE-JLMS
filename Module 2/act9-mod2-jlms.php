@@ -62,6 +62,7 @@
             CheckForDoubles($Dice[0],$Dice[1]);
             DisplayScoreText($Score);
             echo "<p>";
+            echo"Press <b>CTRL + R</b> to roll :)"
                 
         ?>
     </body>
