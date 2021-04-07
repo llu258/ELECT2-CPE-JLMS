@@ -9,7 +9,7 @@
         <?php
             define ("BR", "<br />");
 
-            //echo vs return: echo
+//echo vs return: echo
             function displayCourse($Course1,$Course2,$Course3)
             {
                 echo "Courses Offered" . BR;
@@ -20,7 +20,7 @@
 
             displayCourse("BSIT","BSECE","BSCPE");
 
-            //return: string will just return the first value
+//return: string will just return the first value
             function displayCourse2($Course1,$Course2,$Course3)
             {
                 return $Course1;
@@ -52,7 +52,7 @@
             addition();
             echo BR . $c;
 
-            $Value = 75
+            $Value = 75;
             if($Value == 75)
             {
                 echo "<p> The condition of the value is  true. </p>";
@@ -60,23 +60,64 @@
             }
             echo "<p> This statement always executes after th eif statement. </p>";
 
-           if (value >= 75){
+           if ($Value >= 75){
 
-            echo "PASSED";
+            echo "PASSED<br />";
 
             $a = 5;
             $b = 10;
 
             $c = $a + $b;
-            echo $c;
+            echo "<p>Total: <s?p>",$c. BR;
 
             }
             else{
-                echo "FAILED";
+                echo "FAILED<br />";
 
             }
-            echo "This statement always executes after the if statement.</p>";
+            echo "<p>This statement always executes after the if statement.</p>";
+
+//nested if and nested if else
+            //sales total
+            $SalesTotal = 56;
+            if($SalesTotal >= 50)
+                if($SalesTotal <= 100)
+                    echo "The sales total is between 50 and 100";
+             //age  
+            $Age = 15;
+            if($Age < 30){
+                echo "<p>Your age is less than 30.</p>";
+            }
+            else if($Age > 40 && $Age < 50){
+                echo "<p>Your age is between 40 and 50</p>";
+            }
+            else if($Age > 30 && $Age < 40){
+                echo "<p>Your age is between 30 and 40</p>";
+            }            
+            else{
+                echo "<p>";
+            }
+
+//switch case statement
+            $site = "Business";
+            switch ($site){
+                case 'Business':
+                    echo "My favourite site is business.com!";
+                    break;
+                case 'Code':
+                    echo "My favourite site is code.com";
+                    break;
+                case 'Music':
+                    echo "My favourite site is music.com!";
+                    break;
+                case 'Video':
+                    echo "My favourite site is video.com";
+                    break;   
+                default:
+                    echo "I like everything at ";
                 
+            }
+
         ?>
     </body>
 </html>
