@@ -102,7 +102,7 @@
             $site = "Business";
             switch ($site){
                 case 'Business':
-                    echo "My favourite site is business.com!";
+                    echo "<p>My favourite site is business.com!</p><br />";
                     break;
                 case 'Code':
                     echo "My favourite site is code.com";
@@ -114,10 +114,60 @@
                     echo "My favourite site is video.com";
                     break;   
                 default:
-                    echo "I like everything at ";
+                    echo "I like everything :)";
                 
             }
 
+//functions: repeated
+    
+    //while
+    $Count = 1;
+    while($Count <= 10)
+    {
+        echo "  $Count";
+        ++$Count;
+    }
+
+   //do while
+    $Count = 1;
+    do{
+        echo "<p>The count is eual to $Count</p>";
+        ++$Count;
+
+    } while($Count <= 4);
+
+    //for loop
+    $province = array("Pampanga","Tarlac","Bulacan","Zambales");
+    $NoofProvince = count($province);
+
+    for($i = 0; $i<2; $i++)
+    {
+        echo $province[$i], "<br>";
+    }
+
+    echo "</p>";
+    foreach($province as $probinsya)
+    {
+        echo $probinsya. "<br />";
+    }
+
+    echo "</p>";
+//array: applicable for pooling data
+    //init array
+    $lamborghinis = array("suv" => "Urus", "sports" => "Huracan", "coupe" => "Aventador");
+
+    //find size of the array
+    $size = count($lamborghinis);
+
+    //getting th earray of keys/index strings
+    $keys = array_keys($lamborghinis);
+
+    //using the for loop
+    for($i=0;$i<$size; $i++){
+        echo $lamborghinis[$keys[$i]] . " is a " . $keys[$i] . " car <br>";
+
+    }
+        
         ?>
     </body>
 </html>

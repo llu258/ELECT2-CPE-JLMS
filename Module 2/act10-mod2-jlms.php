@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Conditional Expressions</title>
+        <title>OPERATOR and CONTROL STATEMENTS</title>
     </head>
 
     <body>
@@ -28,10 +28,10 @@
         echo "Subject Final Grade: ", $finalgrade . BR;
 
         if ($finalgrade > 74){
-            echo "Remarks: PASSED". BR;
+            echo "Remarks: Congratulations you passed!". BR;
         }
         else{
-            echo "Remarks: FAILED" . BR;
+            echo "Remarks: Sorry, you're Failed!" . BR;
         }
 
         if ($finalgrade >= 98 && $finalgrade <= 100){
@@ -51,6 +51,21 @@
         }
         else{
             echo "Rating: Failed". BR;
+        }
+
+        $coursecode = "BSCS";
+        switch($coursecode){
+            case 'BSIT':
+                echo "Course: Bachelor of Science in Information Technology" . BR; break;
+        
+        case 'BSIS':
+                echo "Course: Bachelor of Science in Information System" . BR; break;
+        
+        case 'BSCS':
+                echo "Course: Bachelor of Science in Computer Science" . BR; break;
+        
+        case 'BSCPE':
+                echo "Course: Bachelor of Science in Computer Engineering" . BR; break;
         }
         ?>
     </body>
