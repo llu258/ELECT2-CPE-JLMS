@@ -20,8 +20,8 @@ include('servercon.php');
     <div align = "center">
     <form name="homepage" method='post' action="">
     <br><input type="submit" class="btn btn-info" name="emplinfo" formaction="/elect3_bscoe3_jlms/Module%206/create.php" value="Add Employee Information"> 
-   <input type="submit" class="btn btn-info" name="searchrecord" formaction="/elect3_bscoe3_jlms/Module%206/retrieve.php" value="Find Records"></div>
-   
+   <input type="submit" class="btn btn-info" name="searchrecord" formaction="/elect3_bscoe3_jlms/Module%206/retrieve.php" value="Find Records">
+   <input type="submit" class="btn btn-secondary" name="exitpage" formaction="/elect3_bscoe3_jlms/Module%206/exit.php" value="Go to Exit"></div>
 </form>
   </body>
 </html>

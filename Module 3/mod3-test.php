@@ -108,6 +108,122 @@
     echo substr($exampestring,-4);
     echo "<br>";
     echo substr($exampestring, -6, 4);
+    echo "<br>";
+    echo "<br>";
 
+//parsing: divide string into components, extract information
+    $email = "balutiboyashford@yahoo.com";
+    $char_search = "@";
+    echo "Search for the character, " . $char_search; 
+    echo "<br />";
+    echo $email;
+    echo "<br />";
+    echo strpos($email, $char_search); //parsing using strpos
 
-?>
+    echo "<br />";
+    if(strpos($email,'@') !==FALSE)
+    echo "<p>The e-mail address contains an @ character.</p>";
+    else
+    echo "<p>The e-mail address does not containd an @ character.</p>";
+
+//parsing using strchr() and strrchr()
+//strchr:beginning of the string 
+//strrchr: ending of the string
+    echo "<p>The top-level domain of the e-mail address is " . strrchr($email, '@') . "</p>";
+    echo "<p>The top-level domain of the e-mail address is " . strchr($email, 'y') . "</p>";
+    echo "<br />";
+
+    $email2 = "sison.jesusluigi@auf.edu.ph";
+    if(filter_var($email2, FILTER_VALIDATE_EMAIL)){
+        echo("$email2 is not valid e-mail address");
+    }
+    echo "<br>";
+
+//strreplace() replace function
+    $newemail = str_replace("edu", "com", $email2);//replace "edu" to "com"
+    echo $newemail;
+    echo "<br>";
+
+//substr_replace
+    $nameEnd = strpos($email2, '@');
+    $newEmail2 = substr_replace($email2,"sison",0, $nameEnd);
+    echo $newEmail2;
+    echo "<br>";
+    echo "<br>";
+
+//divide string using strtok(); nagagamit sa mga CSV format(excel)
+    $courses = "BSCOE;BSIT;BSCS;BSIS";
+    $coursearray = explode(";", $courses);
+    $separatedcourses = strtok($courses, ";");
+
+    foreach ($coursearray as $courses){
+        echo "$courses<br />";
+    }
+    
+    while ($separatedcourses != NULL){
+        echo "$separatedcourses<br />";
+        $separatedcourses = strtok(";");
+    }
+
+//comparing strings
+//first
+    $firstletter = "A";
+    $secondletter = "B";
+    if ($secondletter > $firstletter)
+    echo "<p> The second letter occurs later in the alphabet than the first letter</p>";
+    else
+    echo "<p>The second letter occurs earlier in the alphabet than the first letter</p>";
+   
+
+//second using strcmp and strcasecmp
+    $strcompare = strcasecmp("Don","don"); //strcasecmp: pareho char, return 0
+    $strcompare2 = strcmp("Don","don");  //strcmp: return kung ilan naiiba
+    echo "strcasecmp: " . $strcompare;
+    echo "<br>";
+    echo "strcmp: " . $strcompare2;
+    echo "<br>";
+    echo "<br>";
+
+//determining similarity of string
+    $firstname = "Don";
+    $secondname = "don";
+    echo "<p>The names \"$firstname\" and \"$secondname\" have" . similar_text($firstname, $secondname) . 
+    "characters in common. </p>";
+    echo "<p>You must change " . levenshtein($firstname, $secondname) . " character(s) to make the
+    names \"$firstname\" and \"$secondname\" the same.</p>"; 
+    //levenshtein: identify kung ilan papalitan para maging same ang output ng char
+
+//determining words pronounce similarly (phonetic and metaphone)
+    $firstname2 = "Gosselin";
+    $secondname2 = "Gauselin";
+    $firstnameSoundsLike = soundex($firstname2); //soundex = phonetic euivalent
+    $secondnameSoundsLike = soundex($secondname2);
+
+    if($firstnameSoundsLike == $secondnameSoundsLike)
+    echo "<p>The names are pronounced the same</p>";
+    else
+    echo "<p>The names are not pronounced the same</p>";
+
+//regular expression
+    $string = "Course Technology";
+    if(preg_match("/course technology/", $string)) //encode string
+    echo "<p>Match found</p>";
+    else
+    echo "<p>Match not found</p>";
+
+//matching any character
+    $ZIP = "2002";
+    if(preg_match("/..../", $ZIP) == 0)
+        echo "<p>Format did not match</p>";
+    
+    else
+        echo "<p>Format match</p>";
+    
+    $IDENTIFIER = "https://www.google.net";
+    if (preg_match("/com$/", $IDENTIFIER) == 0){
+        echo "<p>Format did not match</p>";
+    }
+    else{
+        echo "<p>Format match</p>";
+    }
+    ?>
